@@ -9,17 +9,18 @@ void Welcome();
 void ErrorMessage();
 char cipherChoice();
 
-//TODO: Implement Ceasar class
+//TODO: Implement Ceasar class stuff
 
 int main() {
 
 	Welcome();
+	Caesar caeser;
 
 	if (cipherChoice() == 'E') {
-		cout << "encrypt called";
+		caeser.Encrypt();
 	} 
 	else {
-		cout << "decrypt called";
+		caeser.Decrypt();
 	}
 	
 
