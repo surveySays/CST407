@@ -7,11 +7,12 @@ using std::string;
 class Caesar
 {
 public:
-	Caesar();
-	~Caesar();
-	string Encrypt();
-	string Decrypt();
+	Caesar() = default;
+	void Encrypt(string);
+	void Decrypt(string);
+	string GetWord();
 private:
+	void SetWord(string);
 	string word{ 0 };
 };
 

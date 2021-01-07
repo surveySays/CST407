@@ -1,3 +1,6 @@
 ﻿  Main.cpp
-C:\Users\abboe\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(57): warning C4715: 'cipherChoice': not all control paths return a value
+  ReadFile.cpp
+  Generating Code...
+C:\Users\abboe\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(67): warning C4715: 'cipherChoice': not all control paths return a value
+C:\Users\abboe\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(83): warning C4715: 'keyChoice': not all control paths return a value
   CaesarCipher.vcxproj -> C:\Users\abboe\Documents\Winter2021\CST407\Homework 1\CaesarCipher\Debug\CaesarCipher.exe

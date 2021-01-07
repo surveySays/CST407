@@ -4,23 +4,31 @@ using std::cin;
 using std::endl;
 
 #include "Caesar.h"
+#include "ReadFile.h"
 
 void Welcome();
 void ErrorMessage();
 char cipherChoice();
-
-//TODO: Implement Ceasar class stuff
+int keyChoice();
 
 int main() {
 
 	Welcome();
-	Caesar caeser;
+	keyChoice();
 
+	Caesar caeser;
+	
 	if (cipherChoice() == 'E') {
-		caeser.Encrypt();
+		ReadFile reader;
+		caeser.Encrypt(reader.GetFileContents());
+
+		cout << "Encrypted string: " << caeser.GetWord();
 	} 
 	else {
-		caeser.Decrypt();
+		ReadFile reader;
+		caeser.Decrypt(reader.GetFileContents());
+		
+		cout << "Decrypted string: " << caeser.GetWord();
 	}
 	
 
@@ -36,7 +44,7 @@ void Welcome() {
 
 void ErrorMessage() {
 
-	cout << endl << "Please choose the correct option" << endl;
+	cout << endl << "Please choose the correct option!" << endl;
 }
 
 char cipherChoice() {
@@ -57,4 +65,21 @@ char cipherChoice() {
 		cipherChoice();
 	}
 }
+
+int keyChoice() {
+
+	int key{ 0 };
+
+	cout << "Please enter a key with the value being 1-25: ";
+	cin >> key;
+
+	if (key > 25 || key < 1) {
+		ErrorMessage();
+		keyChoice();
+	}
+	else {
+		return key;
+	}
+}
+
 

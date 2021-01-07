@@ -140,9 +140,11 @@
   <ItemGroup>
     <ClCompile Include="Caesar.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ReadFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Caesar.h" />
+    <ClInclude Include="ReadFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
