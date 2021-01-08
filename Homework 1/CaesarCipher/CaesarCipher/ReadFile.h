@@ -14,7 +14,8 @@ using std::getline;
 class ReadFile
 {
 public:
-	ReadFile();
+	ReadFile() = default;
+	void FileReader();
 	bool CheckFilePath(string);
 	string GetFileContents();
 	void ErrorMessage();

@@ -20,12 +20,14 @@ int main() {
 	
 	if (cipherChoice() == 'E') {
 		ReadFile reader;
+		reader.FileReader();
 		caeser.Encrypt(reader.GetFileContents());
 
 		cout << "Encrypted string: " << caeser.GetWord();
 	} 
 	else {
 		ReadFile reader;
+		reader.FileReader();
 		caeser.Decrypt(reader.GetFileContents());
 		
 		cout << "Decrypted string: " << caeser.GetWord();

@@ -1,25 +1,37 @@
 #include "ReadFile.h"
 
 
-ReadFile::ReadFile()
+
+void ReadFile::FileReader()
 {
 	string filePath;
 
 	cout << endl << "Please enter the name of the txt file: ";
 	cin >> filePath;
 
-	if (CheckFilePath(filePath)) { //if true, then setFilePath
+	if (CheckFilePath(filePath)) {  //I DONT THINK YOU CAN DO THIS IN CONSTRUCTOR
 		SetFileContents(filePath);
-	} 
+	}
 	else {
-		ErrorMessage();
-		ReadFile();
+		FileReader();
 	}
 }
 
-bool ReadFile::CheckFilePath(string)
+bool ReadFile::CheckFilePath(string file)
 {
-	return true;
+	ifstream inFile;
+
+	inFile.open(file);
+	if (!inFile) {
+		ErrorMessage();
+		inFile.close();
+		return false;
+	}
+	else {
+		inFile.close();
+		return true;
+	}
+
 }
 
 string ReadFile::GetFileContents()
@@ -39,10 +51,10 @@ void ReadFile::SetFileContents(string file)
     ifstream inFile;
 
     inFile.open(file);
-    if (!inFile) {
-        cout << "Unable to open file";
-        exit(1); // terminate with error
-    }
+	if (!inFile) {
+		ErrorMessage();
+		inFile.close();
+	}
 
     while (getline(inFile, temp)) {
 
