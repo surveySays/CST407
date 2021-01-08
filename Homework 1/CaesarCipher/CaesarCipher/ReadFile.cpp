@@ -5,7 +5,7 @@ ReadFile::ReadFile()
 {
 	string filePath;
 
-	cout << endl << "Please paste the path of the .txt file: ";
+	cout << endl << "Please enter the name of the txt file: ";
 	cin >> filePath;
 
 	if (CheckFilePath(filePath)) { //if true, then setFilePath
@@ -32,24 +32,26 @@ void ReadFile::ErrorMessage()
 	cout << endl << "File path formatted poorly!" << endl;
 }
 
-void ReadFile::SetFileContents(string filePath)
+void ReadFile::SetFileContents(string file)
 {
-	string contents;
+	string line;
+	string temp;
+    ifstream inFile;
 
-	ifstream myfile(filePath);
+    inFile.open(file);
+    if (!inFile) {
+        cout << "Unable to open file";
+        exit(1); // terminate with error
+    }
 
-	if (myfile.is_open())
-	{
-		while (getline(myfile, contents))
-		{
-			contents += contents;
-		}
-		myfile.close();
-	}
+    while (getline(inFile, temp)) {
 
-	else cout << "Unable to open file";
+		line.append(temp);
+    }
 
-	cout << contents;
+	fileContents = line;
+
+    inFile.close();
 
 }
 

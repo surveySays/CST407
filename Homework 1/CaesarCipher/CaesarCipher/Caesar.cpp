@@ -23,10 +23,10 @@ void Caesar::Decrypt(string oldWord)
 
 string Caesar::GetWord()
 {
-	return "hello";
+	return newWord;
 }
 
 void Caesar::SetWord(string oldWord)
 {
-	word = oldWord;
+	newWord = oldWord;
 }

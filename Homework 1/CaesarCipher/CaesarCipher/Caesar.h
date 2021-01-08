@@ -13,6 +13,6 @@ public:
 	string GetWord();
 private:
 	void SetWord(string);
-	string word{ 0 };
+	string newWord{ 0 };
 };
 
