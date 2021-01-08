@@ -14,16 +14,16 @@ int keyChoice();
 int main() {
 
 	Welcome();
-	keyChoice();
+	int key = keyChoice();
 
 	Caesar caeser;
 	
 	if (cipherChoice() == 'E') {
 		ReadFile reader;
 		reader.FileReader();
-		caeser.Encrypt(reader.GetFileContents());
+		caeser.Encrypt(reader.GetFileContents(), key);
 
-		cout << "Encrypted string: " << caeser.GetWord();
+		cout << "Encrypted string: " << caeser.GetWord() << endl;
 	} 
 	else {
 		ReadFile reader;

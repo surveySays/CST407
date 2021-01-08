@@ -1,14 +1,30 @@
 #include "Caesar.h"
 
 
-void Caesar::Encrypt(string oldWord)
+void Caesar::Encrypt(string oldWord, int key_)
 {
-	//Encrypt stuff
-	//
-	//
+	key = key_; //set private key variable to key from main
 
+	char* char_arr;
+	string str_obj(oldWord);
+	char_arr = &str_obj[0];
+	string temp;
 
-	SetWord(oldWord);
+	for (int i = 0; i < oldWord.length(); i++) {
+		
+		if (char_arr[i] + key_ > 122) {  //z ascii = 122
+			char_arr[i] = (char_arr[i] + key_) - 26;
+			temp.push_back(char_arr[i]);
+		}
+		else {
+			char_arr[i] = char_arr[i] + key_;
+			temp.push_back(char_arr[i]);
+		}
+	}
+
+	SetWord(temp);
+
+	WriteToFile();
 }
 
 void Caesar::Decrypt(string oldWord)
@@ -19,6 +35,8 @@ void Caesar::Decrypt(string oldWord)
 
 
 	SetWord(oldWord);
+
+	WriteToFile();
 }
 
 string Caesar::GetWord()
@@ -29,4 +47,13 @@ string Caesar::GetWord()
 void Caesar::SetWord(string oldWord)
 {
 	newWord = oldWord;
+}
+
+void Caesar::WriteToFile()
+{
+	cout << "Sucess writing new word to file." << endl;
+
+	ofstream out("output.txt");
+	out << newWord;
+	out.close();
 }
