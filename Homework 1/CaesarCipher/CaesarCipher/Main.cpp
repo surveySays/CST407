@@ -14,23 +14,32 @@ int keyChoice();
 int main() {
 
 	Welcome();
-	int key = keyChoice();
-
-	Caesar caeser;
 	
-	if (cipherChoice() == 'E') {
-		ReadFile reader;
-		reader.FileReader();
-		caeser.Encrypt(reader.GetFileContents(), key);
+	char again = 'y';
 
-		cout << "Encrypted string: " << caeser.GetWord() << endl;
-	} 
-	else {
-		ReadFile reader;
-		reader.FileReader();
-		caeser.Decrypt(reader.GetFileContents());
-		
-		cout << "Decrypted string: " << caeser.GetWord();
+	while (again == 'y' || again == 'Y') {
+
+		int key = keyChoice();
+
+		Caesar caeser;
+
+		if (cipherChoice() == 'E') {
+			ReadFile reader;
+			reader.FileReader();
+			caeser.Encrypt(reader.GetFileContents(), key);
+
+			cout << "Encrypted string: " << caeser.GetWord() << endl;
+		}
+		else {
+			ReadFile reader;
+			reader.FileReader();
+			caeser.Decrypt(reader.GetFileContents(), key);
+
+			cout << "Decrypted string: " << caeser.GetWord() << endl;
+		}
+
+		cout << endl << "Again? Enter 'y': ";
+		cin >> again;
 	}
 	
 

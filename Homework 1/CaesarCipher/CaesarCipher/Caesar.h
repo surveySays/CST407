@@ -13,7 +13,7 @@ class Caesar
 public:
 	Caesar() = default;
 	void Encrypt(string, int);
-	void Decrypt(string);
+	void Decrypt(string, int);
 	string GetWord();
 private:
 	void SetWord(string);

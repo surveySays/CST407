@@ -27,14 +27,28 @@ void Caesar::Encrypt(string oldWord, int key_)
 	WriteToFile();
 }
 
-void Caesar::Decrypt(string oldWord)
+void Caesar::Decrypt(string oldWord, int key_)
 {
-	//Decrypt stuff
-	//
-	//
+	key = key_; //set private key variable to key from main
 
+	char* char_arr;
+	string str_obj(oldWord);
+	char_arr = &str_obj[0];
+	string temp;
 
-	SetWord(oldWord);
+	for (int i = 0; i < oldWord.length(); i++) {
+
+		if (char_arr[i] - key_ < 97) {  //a ascii = 122
+			char_arr[i] = (char_arr[i] - key_) + 26;
+			temp.push_back(char_arr[i]);
+		}
+		else {
+			char_arr[i] = char_arr[i] - key_;
+			temp.push_back(char_arr[i]);
+		}
+	}
+
+	SetWord(temp);
 
 	WriteToFile();
 }
