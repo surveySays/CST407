@@ -14,6 +14,7 @@ public:
 	Caesar() = default;
 	void Encrypt(string, int);
 	void Decrypt(string, int);
+	void DecryptNoKey(string);
 	string GetWord();
 private:
 	void SetWord(string);

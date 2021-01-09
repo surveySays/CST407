@@ -38,7 +38,7 @@ void Caesar::Decrypt(string oldWord, int key_)
 
 	for (int i = 0; i < oldWord.length(); i++) {
 
-		if (char_arr[i] - key_ < 97) {  //a ascii = 122
+		if (char_arr[i] - key_ < 97) {  //a ascii = 97
 			char_arr[i] = (char_arr[i] - key_) + 26;
 			temp.push_back(char_arr[i]);
 		}
@@ -51,6 +51,11 @@ void Caesar::Decrypt(string oldWord, int key_)
 	SetWord(temp);
 
 	WriteToFile();
+}
+
+void Caesar::DecryptNoKey(string)
+{
+	cout << endl << "Made it to no key function!" << endl;
 }
 
 string Caesar::GetWord()

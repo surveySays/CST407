@@ -10,6 +10,7 @@ void Welcome();
 void ErrorMessage();
 char cipherChoice();
 int keyChoice();
+int keyOption();
 
 int main() {
 
@@ -19,23 +20,32 @@ int main() {
 
 	while (again == 'y' || again == 'Y') {
 
-		int key = keyChoice();
+		int key = keyOption();
 
 		Caesar caeser;
 
-		if (cipherChoice() == 'E') {
+		if (key == 0) {
+
 			ReadFile reader;
 			reader.FileReader();
-			caeser.Encrypt(reader.GetFileContents(), key);
-
-			cout << "Encrypted string: " << caeser.GetWord() << endl;
+			caeser.DecryptNoKey(reader.GetFileContents());
 		}
 		else {
-			ReadFile reader;
-			reader.FileReader();
-			caeser.Decrypt(reader.GetFileContents(), key);
 
-			cout << "Decrypted string: " << caeser.GetWord() << endl;
+			if (cipherChoice() == 'E') {
+				ReadFile reader;
+				reader.FileReader();
+				caeser.Encrypt(reader.GetFileContents(), key);
+
+				cout << "Encrypted string: " << caeser.GetWord() << endl;
+			}
+			else {
+				ReadFile reader;
+				reader.FileReader();
+				caeser.Decrypt(reader.GetFileContents(), key);
+
+				cout << "Decrypted string: " << caeser.GetWord() << endl;
+			}
 		}
 
 		cout << endl << "Again? Enter 'y': ";
@@ -90,6 +100,25 @@ int keyChoice() {
 	}
 	else {
 		return key;
+	}
+}
+
+int keyOption() {
+
+	string option{ 0 };
+
+	cout << "Please type 'n' if no key or type 'y' if you want to use a key: ";
+	cin >> option;
+
+	if (option == "n" || option == "N") {
+		return 0;
+	}
+	else if (option == "y" || option == "Y") {
+		return keyChoice();
+	}
+	else {
+		ErrorMessage();
+		keyOption();
 	}
 }
 
