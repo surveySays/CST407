@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iterator> 
-#include <map> 
+#include <map>
 using std::string;
 using std::ofstream;
 using std::cout;

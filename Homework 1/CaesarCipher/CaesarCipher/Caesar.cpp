@@ -55,9 +55,9 @@ void Caesar::Decrypt(string oldWord, int key_)
 
 void Caesar::DecryptNoKey(string oldWord)
 {
-	char* char_arr;
-	string str_obj(oldWord);
-	char_arr = &str_obj[0];
+	char* char_arr = &oldWord[0];
+	string stringHolder = oldWord;
+
 	string temp;
 
 	for (int y = 1; y < 26; y++) { //gotta do this 26 times because alphabet is 26 letters
@@ -80,6 +80,10 @@ void Caesar::DecryptNoKey(string oldWord)
 
 			DictionarySearch(temp, y);
 		}
+
+		temp = "";
+		oldWord = stringHolder;
+		char* char_arr = &oldWord[0];
 	}
 
 	PrintMap();
@@ -87,11 +91,11 @@ void Caesar::DecryptNoKey(string oldWord)
 
 bool Caesar::vowelCheck(string word, int size)
 {
-	const char vowels[] = { 'a', 'e', 'i', 'o', 'u' };
+	const string vowels[] = { "a", "e", "i", "o", "u", "y" };
 
-	for (int i = 0; i < 5; ++i) {
+	for (int i = 0; i < 6; ++i) {
 
-		if (word.find(vowels[i])) {  //need to see if word contains any vowels before we start searching dictionary
+		if (word.find(vowels[i]) != std::string::npos) {  //need to see if word contains any vowels before we start searching dictionary
 			return true;
 		}
 	}
@@ -105,10 +109,12 @@ void Caesar::DictionarySearch(string word, int key)
 
 	for (int i = 0; i < 1; ++i) {
 
-		if (word.find(wordsTest[i])) {  //need to see if word contains any vowels before we start searching dictionary
-			successWords.insert(std::pair<int, string>(7, word));
+		if (word.find(wordsTest[i]) != std::string::npos) {  //need to see if word contains any vowels before we start searching dictionary
+			successWords.insert(std::pair<int, string>(key, word));
 		}
 	}
+
+	//successWords.insert(std::pair<int, string>(key, word));
 }
 
 void Caesar::PrintMap()
@@ -117,7 +123,6 @@ void Caesar::PrintMap()
 	if (successWords.empty()) {
 
 		cout << "No solutions found." << endl;
-
 	}
 	else
 	{
@@ -129,7 +134,6 @@ void Caesar::PrintMap()
 			cout << "Key: " << it->first << endl << endl;
 		}
 	}
-	
 }
 
 string Caesar::GetWord()
@@ -141,7 +145,6 @@ void Caesar::SetWord(string oldWord)
 {
 	newWord = oldWord;
 }
-
 
 
 void Caesar::WriteToFile()
