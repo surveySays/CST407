@@ -1,5 +1,11 @@
 ﻿  Caesar.cpp
 C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(73,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(66,21): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  ReadFile.cpp
+  Generating Code...
+C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(88): warning C4715: 'cipherChoice': not all control paths return a value
+C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(104): warning C4715: 'keyChoice': not all control paths return a value
+C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(123): warning C4715: 'keyOption': not all control paths return a value
   CaesarCipher.vcxproj -> C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\Debug\CaesarCipher.exe

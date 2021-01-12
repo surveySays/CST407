@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iterator> 
 #include <map>
+#include <vector>
+
 using std::string;
 using std::ofstream;
 using std::cout;
@@ -27,6 +29,7 @@ private:
 	void DictionarySearch(string, int);
 	string newWord{ 0 };
 	int key{ 0 };
+	std::vector<string> wordsFound;
 	map<int, string> successWords;
 };
 
