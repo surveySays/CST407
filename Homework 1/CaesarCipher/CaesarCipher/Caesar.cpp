@@ -1087,12 +1087,12 @@ void Caesar::DictionarySearch(string word, int key)
       "young"
     };
 
-    cout << sizeof(wordsTest) / sizeof(wordsTest[0]) << endl;
 	for (int i = 0; i < sizeof(wordsTest) / sizeof(wordsTest[0]); ++i) {
 
 		if (word.find(wordsTest[i]) != std::string::npos) {  //need to see if word contains any vowels before we start searching dictionary
 			successWords.insert(std::pair<int, string>(key, word));
             wordsFound.push_back(wordsTest[i]);
+			return;
 		}
 	}
 }
@@ -1107,14 +1107,14 @@ void Caesar::PrintMap()
 	else
 	{
 		cout << endl << "Possible options below:" << endl;
-        int i = wordsFound.size();
+		int i{ 0 };
 
 		for (auto it = successWords.cbegin(); it != successWords.cend(); ++it)
 		{
 			cout << "Decrypted word: " << it->second << endl;
-            cout << "Words found: " << wordsFound[i] << endl;
+            cout << "Word found: " << wordsFound[i] << endl;
 			cout << "Key: " << it->first << endl << endl;
-            i -= 1;
+            i += 1;
 		}
 	}
 }
