@@ -60,7 +60,7 @@ void Caesar::DecryptNoKey(string oldWord)
 
 	string temp;
 
-	for (int y = 1; y < 26; y++) { //gotta do this 26 times because alphabet is 26 letters
+	for (int y = 0; y < 26; y++) { //gotta do this 26 times because alphabet is 26 letters
 
 		//changing value of caesar here
 		for (int i = 0; i < oldWord.length(); i++) {
@@ -103,7 +103,7 @@ bool Caesar::vowelCheck(string word, int size)
 	return false;
 }
 
-void Caesar::DictionarySearch(string word, int key)
+void Caesar::DictionarySearch(string word, int key_)
 {
 	const string wordsTest[] = {
       "able",
@@ -1087,14 +1087,22 @@ void Caesar::DictionarySearch(string word, int key)
       "young"
     };
 
+	int temp{ 0 };
+
 	for (int i = 0; i < sizeof(wordsTest) / sizeof(wordsTest[0]); ++i) {
 
 		if (word.find(wordsTest[i]) != std::string::npos) {  //need to see if word contains any vowels before we start searching dictionary
-			successWords.insert(std::pair<int, string>(key, word));
-            wordsFound.push_back(wordsTest[i]);
-			return;
+			successWords.insert(std::pair<int, string>(key_, word));
+
+			temp += 1;
+		}
+
+		if (temp > count) {
+			count = temp;
+			key = key_;
 		}
 	}
+
 }
 
 void Caesar::PrintMap()
@@ -1107,15 +1115,17 @@ void Caesar::PrintMap()
 	else
 	{
 		cout << endl << "Possible options below:" << endl;
-		int i{ 0 };
 
 		for (auto it = successWords.cbegin(); it != successWords.cend(); ++it)
 		{
-			cout << "Decrypted word: " << it->second << endl;
-            cout << "Word found: " << wordsFound[i] << endl;
-			cout << "Key: " << it->first << endl << endl;
-            i += 1;
+			if (it->first == key) {
+				cout << "Decrypted word: " << it->second << endl;
+				cout << "Key: " << it->first << endl << endl;
+				newWord = it->second;
+			}
 		}
+
+		WriteToFile();
 	}
 }
 

@@ -29,6 +29,7 @@ private:
 	void DictionarySearch(string, int);
 	string newWord{ 0 };
 	int key{ 0 };
+	int count{ 0 };
 	std::vector<string> wordsFound;
 	map<int, string> successWords;
 };
