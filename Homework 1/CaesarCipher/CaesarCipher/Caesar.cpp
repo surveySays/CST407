@@ -5,6 +5,8 @@ void Caesar::Encrypt(string oldWord, int key_)
 {
 	key = key_; //set private key variable to key from main
 
+	oldWord = FixWord(oldWord);
+
 	char* char_arr;
 	string str_obj(oldWord);
 	char_arr = &str_obj[0];
@@ -31,6 +33,8 @@ void Caesar::Decrypt(string oldWord, int key_)
 {
 	key = key_; //set private key variable to key from main
 
+	oldWord = FixWord(oldWord);
+
 	char* char_arr;
 	string str_obj(oldWord);
 	char_arr = &str_obj[0];
@@ -55,9 +59,12 @@ void Caesar::Decrypt(string oldWord, int key_)
 
 void Caesar::DecryptNoKey(string oldWord)
 {
-	char* char_arr = &oldWord[0];
-	string stringHolder = oldWord;
 
+	oldWord = FixWord(oldWord);
+
+	char* char_arr;
+	string str_obj(oldWord);
+	char_arr = &str_obj[0];
 	string temp;
 
 	for (int y = 0; y < 26; y++) { //gotta do this 26 times because alphabet is 26 letters
@@ -1103,6 +1110,17 @@ void Caesar::DictionarySearch(string word, int key_)
 		}
 	}
 
+}
+
+string Caesar::FixWord(string oldWord)
+{
+
+	
+	//turn all characters to lowercase
+	//remove all spaces
+	//remove all special characters
+
+	return oldWord;
 }
 
 void Caesar::PrintMap()

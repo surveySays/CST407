@@ -1,5 +1,5 @@
 ﻿  Caesar.cpp
-C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(66,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(71,21): warning C4018: '<': signed/unsigned mismatch
   CaesarCipher.vcxproj -> C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\Debug\CaesarCipher.exe

@@ -6,6 +6,7 @@
 #include <iterator> 
 #include <map>
 #include <vector>
+#include <algorithm>
 
 using std::string;
 using std::ofstream;
@@ -27,6 +28,7 @@ private:
 	void WriteToFile();
 	bool vowelCheck(string, int);
 	void DictionarySearch(string, int);
+	string FixWord(string);
 	string newWord{ 0 };
 	int key{ 0 };
 	int count{ 0 };
