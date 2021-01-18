@@ -28,6 +28,7 @@ private:
 	void WriteToFile();
 	bool vowelCheck(string, int);
 	void DictionarySearch(string, int);
+	void removeSpecialCharacter(string s);
 	string FixWord(string);
 	string newWord{ 0 };
 	int key{ 0 };

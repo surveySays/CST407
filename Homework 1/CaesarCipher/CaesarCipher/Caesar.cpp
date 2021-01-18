@@ -59,7 +59,6 @@ void Caesar::Decrypt(string oldWord, int key_)
 
 void Caesar::DecryptNoKey(string oldWord)
 {
-
 	oldWord = FixWord(oldWord);
 
 	char* char_arr;
@@ -84,7 +83,6 @@ void Caesar::DecryptNoKey(string oldWord)
 
 		//parsing dictionary here
 		if (vowelCheck(temp, oldWord.size())) { //if there is a vowel then lets search the word, else lets skip it
-
 			DictionarySearch(temp, y);
 		}
 
@@ -1112,13 +1110,37 @@ void Caesar::DictionarySearch(string word, int key_)
 
 }
 
+void Caesar::removeSpecialCharacter(string s)
+{
+    for (int i = 0; i < s.size(); i++) {
+
+        // Finding the character whose  
+        // ASCII value fall under this 
+        // range 
+        if (s[i] < 'A' || s[i] > 'Z' &&
+            s[i] < 'a' || s[i] > 'z')
+        {
+            // erase function to erase  
+            // the character 
+            s.erase(i, 1);
+            i--;
+        }
+    }
+
+    // for testing
+    //cout << s;
+}
+
 string Caesar::FixWord(string oldWord)
 {
-
-	
 	//turn all characters to lowercase
+    transform(oldWord.begin(), oldWord.end(), oldWord.begin(), ::tolower);
+
 	//remove all spaces
+    remove_if(oldWord.begin(), oldWord.end(), isspace);
+
 	//remove all special characters
+    removeSpecialCharacter(oldWord);
 
 	return oldWord;
 }
