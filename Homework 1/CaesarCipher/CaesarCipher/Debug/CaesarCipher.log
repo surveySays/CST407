@@ -1,13 +1,7 @@
 ﻿  Caesar.cpp
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(72,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(90,13): error C2065: 'stringHolder': undeclared identifier
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(1115,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(1140,5): warning C4834: discarding return value of function with 'nodiscard' attribute
-  Main.cpp
-  ReadFile.cpp
-  Generating Code...
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(88): warning C4715: 'cipherChoice': not all control paths return a value
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(104): warning C4715: 'keyChoice': not all control paths return a value
-C:\Users\canse\Desktop\cst_407\CST407\Homework 1\CaesarCipher\CaesarCipher\Main.cpp(123): warning C4715: 'keyOption': not all control paths return a value
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(72,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(119,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\CaesarCipher\Caesar.cpp(127,20): warning C4018: '<': signed/unsigned mismatch
+  CaesarCipher.vcxproj -> C:\Users\Boese\Documents\Winter2021\CST407\Homework 1\CaesarCipher\Debug\CaesarCipher.exe

@@ -64,7 +64,7 @@ void Caesar::DecryptNoKey(string oldWord)
 	char* char_arr;
 	string str_obj(oldWord);
 	char_arr = &str_obj[0];
-	string temp;
+	string temp{ 0 };
 
 	for (int y = 0; y < 26; y++) { //gotta do this 26 times because alphabet is 26 letters
 
@@ -72,12 +72,10 @@ void Caesar::DecryptNoKey(string oldWord)
 		for (int i = 0; i < oldWord.length(); i++) {
 
 			if (char_arr[i] - y < 97) {  //a ascii = 97
-				char_arr[i] = (char_arr[i] - y) + 26;	//using y as key because it will keep incrementing
-				temp.push_back(char_arr[i]);
+				temp.push_back((char_arr[i] - y) + 26); //using y as key because it will keep incrementing
 			}
 			else {
-				char_arr[i] = char_arr[i] - y;
-				temp.push_back(char_arr[i]);
+				temp.push_back(char_arr[i] - y);
 			}
 		}
 
@@ -87,8 +85,6 @@ void Caesar::DecryptNoKey(string oldWord)
 		}
 
 		temp = "";
-		oldWord = stringHolder;
-		char* char_arr = &oldWord[0];
 	}
 
 	PrintMap();
@@ -106,6 +102,44 @@ bool Caesar::vowelCheck(string word, int size)
 	}
 	
 	return false;
+}
+
+string Caesar::FixWord(string oldWord)
+{
+	//turn all characters to lowercase
+	transform(oldWord.begin(), oldWord.end(), oldWord.begin(), ::tolower);
+
+	//remove all spaces
+	//remove_if(oldWord.begin(), oldWord.end(), isspace);
+	char* char_arr;
+	string str_obj(oldWord);
+	char_arr = &str_obj[0];
+	string temp;
+
+	for (int i = 0; i < oldWord.size(); i++) {
+		if (char_arr[i] != ' ')
+		{
+			temp.push_back(char_arr[i]);
+		}
+	}
+
+	//remove all special characters
+	for (int i = 0; i < temp.size(); i++) {
+
+		// Finding the character whose  
+		// ASCII value fall under this 
+		// range 
+		if (temp[i] < 'A' || temp[i] > 'Z' &&
+			temp[i] < 'a' || temp[i] > 'z')
+		{
+			// erase function to erase  
+			// the character 
+			temp.erase(i, 1);
+			i--;
+		}
+	}
+
+	return temp;
 }
 
 void Caesar::DictionarySearch(string word, int key_)
@@ -1092,11 +1126,13 @@ void Caesar::DictionarySearch(string word, int key_)
       "young"
     };
 
+
+
 	int temp{ 0 };
 
 	for (int i = 0; i < sizeof(wordsTest) / sizeof(wordsTest[0]); ++i) {
 
-		if (word.find(wordsTest[i]) != std::string::npos) {  //need to see if word contains any vowels before we start searching dictionary
+		if (word.find(wordsTest[i]) != std::string::npos) {  
 			successWords.insert(std::pair<int, string>(key_, word));
 
 			temp += 1;
@@ -1110,40 +1146,6 @@ void Caesar::DictionarySearch(string word, int key_)
 
 }
 
-void Caesar::removeSpecialCharacter(string s)
-{
-    for (int i = 0; i < s.size(); i++) {
-
-        // Finding the character whose  
-        // ASCII value fall under this 
-        // range 
-        if (s[i] < 'A' || s[i] > 'Z' &&
-            s[i] < 'a' || s[i] > 'z')
-        {
-            // erase function to erase  
-            // the character 
-            s.erase(i, 1);
-            i--;
-        }
-    }
-
-    // for testing
-    //cout << s;
-}
-
-string Caesar::FixWord(string oldWord)
-{
-	//turn all characters to lowercase
-    transform(oldWord.begin(), oldWord.end(), oldWord.begin(), ::tolower);
-
-	//remove all spaces
-    remove_if(oldWord.begin(), oldWord.end(), isspace);
-
-	//remove all special characters
-    removeSpecialCharacter(oldWord);
-
-	return oldWord;
-}
 
 void Caesar::PrintMap()
 {
@@ -1165,7 +1167,9 @@ void Caesar::PrintMap()
 			}
 		}
 
-		WriteToFile();
+		
+
+		//WriteToFile();
 	}
 }
 
