@@ -1169,7 +1169,7 @@ void Caesar::PrintMap()
 
 		
 
-		//WriteToFile();
+		WriteToFile();
 	}
 }
 
