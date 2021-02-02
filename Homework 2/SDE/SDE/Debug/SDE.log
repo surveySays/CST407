@@ -1,5 +1,2 @@
-﻿  KeyMaker.cpp
-  main.cpp
-  Generating Code...
-C:\Users\Boese\Documents\Winter2021\CST407\Homework 2\SDE\SDE\main.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+﻿  SDE.cpp
   SDE.vcxproj -> C:\Users\Boese\Documents\Winter2021\CST407\Homework 2\SDE\Debug\SDE.exe

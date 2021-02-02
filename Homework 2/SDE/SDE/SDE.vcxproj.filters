@@ -21,9 +21,15 @@
     <ClCompile Include="KeyMaker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
