@@ -6,17 +6,16 @@
 
 int main() {
 
-	std::string input;
-	int tenBitKey[10];
-	int text[8];
-	KeyMaker keymaker;
-	SDE partTwo;
-
 	int* keyOne;
 	int* keyTwo;
 	int* finalText;
+	KeyMaker keymaker;
+	SDE partTwo;
+	std::string input{""};
+	int tenBitKey[10] = {0};
+	int text[8] = {0};
 
-	std::cout << "Please input your 10-bit key." << std::endl;
+	cout << "Please input your 10-bit key:" << std::endl;
 	std::getline(std::cin, input);
 
 	for (int i = 0; i < input.length(); i++)
@@ -29,7 +28,7 @@ int main() {
 	keyOne = keymaker.GetKeyOne();
 	keyTwo = keymaker.GetKeyTwo();
 
-	std::cout << "Please input your 8-bit text: " << std::endl;
+	cout << "Please input your 8-bit text: " << std::endl;
 	std::getline(std::cin, input);
 
 	for (int i = 0; i < input.length(); i++)
@@ -38,7 +37,7 @@ int main() {
 	}
 
 	char choice;
-	std::cout << "Please choose 'e' for encryption or 'd' for decryption: ";
+	cout << "Please choose 'e' for encryption or 'd' for decryption: ";
 	std::cin >> choice;
 
 	//change to user option
@@ -62,6 +61,7 @@ int main() {
 	}
 
 	cout << endl;
+
 
 	return 0;
 }
