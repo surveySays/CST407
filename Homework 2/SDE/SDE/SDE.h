@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <string>
+using std::to_string;
+using std::string;
 using std::swap;
 using std::cout;
 using std::endl;

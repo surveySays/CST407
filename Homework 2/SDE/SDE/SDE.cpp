@@ -79,8 +79,62 @@ void SDE::MiddlePart() {
 	//}
 
 	//S0
+	string Szero[4][4] = { 
+	"01","00","11","10",
+	"11","10","01","00",
+	"00","10","01","11",
+	"11","01","11","10"
+	};
+				
+	string column = to_string(temp[1]) + to_string(temp[2]);
+	string row = to_string(temp[0]) + to_string(temp[3]);
+
+	const char* bitOption[] = { "00", "01", "10", "11" };
+
+	int rowIndex{ 0 };
+	int columnIndex{ 0 };
+
+	for (int i = 0; i < 4; i++) {
+
+		if (bitOption[i] == row) {
+			rowIndex = i;
+		}
+
+		if (bitOption[i] == column) {
+			columnIndex = i;
+		}
+	}
+
+	string outputSzero = Szero[rowIndex][columnIndex];
+
 
 	//S1
+	string Sone[4][4] = {
+	"00","01","10","11",
+	"10","00","01","11",
+	"11","00","01","00",
+	"10","01","00","11"
+	};
+	
+	column = to_string(temp[5]) + to_string(temp[6]);
+	row = to_string(temp[4]) + to_string(temp[7]);
+
+	for (int i = 0; i < 4; i++) {
+
+		if (bitOption[i] == row) {
+			rowIndex = i;
+		}
+
+		if (bitOption[i] == column) {
+			columnIndex = i;
+		}
+	}
+
+	string outputSone = Sone[rowIndex][columnIndex];
+
+
+	//cout << "output: " << outputSzero << " " << outputSone << endl;
+
 
 	//MERGE
 
