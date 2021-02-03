@@ -37,7 +37,21 @@ int main() {
 		text[i] = input[i] - '0';
 	}
 
-	partTwo.PartTwoSetters(text, keyOne, keyTwo);
+	char choice;
+	std::cout << "Please choose 'e' for encryption or 'd' for decryption: ";
+	std::cin >> choice;
+
+	//change to user option
+	bool flag { true };
+	
+	if (choice == 'e' || choice == 'E') {
+		flag = true;
+	} 
+	else {
+		flag = false;
+	}
+
+	partTwo.PartTwoSetters(text, keyOne, keyTwo, flag);
 
 	finalText = partTwo.GetFinalText();
 
@@ -48,20 +62,6 @@ int main() {
 	}
 
 	cout << endl;
-
-	/*cout << "keyOne: ";
-
-	for (int i = 0; i < 8; i++) {
-		cout << keyOne[i];
-	}
-
-	cout << endl;
-
-	cout << "keyTwo: ";
-
-	for (int i = 0; i < 8; i++) {
-		cout << keyTwo[i];
-	}*/
 
 	return 0;
 }

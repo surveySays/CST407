@@ -1,2 +1,6 @@
 ﻿  SDE.cpp
+  main.cpp
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 2\SDE\SDE\main.cpp(22,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Boese\Documents\Winter2021\CST407\Homework 2\SDE\SDE\main.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
   SDE.vcxproj -> C:\Users\Boese\Documents\Winter2021\CST407\Homework 2\SDE\Debug\SDE.exe
